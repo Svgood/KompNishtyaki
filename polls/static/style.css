@@ -1,0 +1,200 @@
+@font-face {
+			font-family: myFont;
+    		src: url(Red_October-Regular.ttf);
+		}
+	body {
+		font-family: myFont;
+	}
+  	#mainimg {
+  		width: 100%;
+  		height: 100%;
+  		
+  	}
+  	.bgcolor {
+  		height: 250px;
+  		background-color: transparent;
+  	}
+ 
+	 .navbar.center .navbar-inner {
+	    text-align: center;
+	}
+	.navbar.center .navbar-inner .nav {
+	    float: none;
+	    
+	}
+	.ulcorrect {
+		margin-left: auto;
+		margin-right: auto;
+		width: 750px;
+	}
+	.jumbotron {
+		padding-top: 30px;
+	}
+	.col-lg-1 {
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+	.btmpadding{
+		padding-bottom: 24px;
+	}
+	.right {
+		float: right;
+	}
+	.left {
+		float: left;
+	}
+	.txtwhite{
+		color: white;
+		text-shadow: 2px 2px black;
+	}
+	.btmpadding{
+		padding-bottom: 15px;
+	}
+	.ulinline {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+	}
+	.ulinline li {
+		display: inline;
+	}
+	#socico {
+			margin-left: 5px;
+			width: 44px;
+			height: 44px;
+		}
+	#id {
+		max-width: 100%;
+		height: auto;
+	}
+	.navbar-default .navbar-brand {
+		color: transparent;
+	}
+
+	.inputField{
+		width: 150px;
+		margin-top: 12px;
+		margin-bottom: 12px;
+		line-height: 15px;
+		opacity: 0.5
+	}
+
+	#reg {
+		
+		background-color: #fff8d1;
+		height: 450px;
+		border-radius: 5px;
+	}
+	
+	#regForm {
+		margin-left: 50px;
+		width: 300px;
+	}
+
+	#regComplete {
+		width: 600px;
+		height: 400px;
+		margin-left: 50px;
+		font-size: 22px;
+	}
+
+	#auth {
+		margin-left: 20px;
+	}
+
+	.regText {
+		
+	}
+
+	.inside {
+		margin: 10px 10px 10px 10px
+	}
+
+	.regField {
+		margin-top: 10px;
+	}
+
+	.userField {
+		margin-top: 20px;
+		width: 900px;
+		height: 70px;
+	}
+
+	.goodField {
+		margin-top: 15px;
+		margin-right: auto;
+		margin-left: auto;
+		height: 275px;
+		width: 200px;
+		background-color: orange;
+		border-radius: 6px;
+		transition: background-color 0.5s;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.goodField:hover {
+		background-color: white;
+		transition: background-color 0.5s;
+	}
+
+	.goodFieldInside {
+		margin: 15px 15px 15px 15px;
+	}
+
+	.goodName {
+		font-size: 14px;
+		text-align: center;
+	}
+
+	.goodDesc {
+		font-size: 12px;
+		text-align: center;
+	}
+
+	.goodImg {
+		width: 160px;
+		height: 150px;
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: 15px;
+	}
+
+	li a {
+		font-size: 16px;
+	}
+
+
+
+  	body {
+  		background-color: #ecca11;
+  	}
+
+
+
+  	@media (max-width: 1200px) {
+  		body {
+  			font-size: 28px;
+  		}
+  	}
+  	@media (max-width: 992px) {
+  		body {
+  			font-size: 26px;
+  		}
+  	}
+  	@media (max-width: 768px) {
+  		body {
+  			font-size: 24px;
+  		}
+  		.ulcorrect {
+  			width: 450px;
+  		}
+  		.navbar-default .navbar-brand {
+		color: #777;
+		font-size: 24px;
+		}
+		#socico {
+			width: 32px;
+			height: 32px;
+		}
+  	}
