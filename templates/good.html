@@ -51,17 +51,11 @@
 	  <div class="row btmpadding">
 	  	<div class="col-lg-1"></div>
 	  	<div class="col-lg-10">
-		   <div class="filterBar">
-		   		<form method="POST" action="{% url 'goods' %}">
-		   			{% csrf_token %}
-		   			<select name="choice">
-		   				<option value="Все">Все</option>
-		   				{% for cat in cats %}
-		   				<option value="{{ cat.category_name }}">{{ cat.category_name }}</option>
-		   				{%endfor%}
-		   			</select>
-		   			<input type="submit" name="search" value="Отфильтровать">
-		   		</form>
+		   <div class="goodSpace">
+		   		<img src="{{good.good_img_link}}"><br>
+		   		<span>{{good.good_name}}</span><br>
+		   		<span>{{good.good_description}}</span><br>
+		   		<span>Стоимость : {{good.good_cost}}</span><br>
 		   </div>
 	  	</div>
 	  	<div class="col-lg-1"></div>
@@ -69,21 +63,6 @@
 
 
 
-	  <div class="row btmpadding">
-	  	{% for good in goods%}
-	  		<div class="col-lg-3">
-	  			<div class="goodField">
-	  				<div class="goodFieldInside">
-	  				 	<a href="{% url 'good' good.id %}"><img class="goodImg" src="{{ good.good_img_link }}"></a>
-	  				 	<br>
-	  				 	<span class="goodName">{{ good.good_name }}</span>
-	  				 	<br>
-	  				 	<span class="goodDesc">{{ good.good_description }}</span>
-	  				</div>
-	  			</div>
-	  		</div>
-	  	{%endfor%}
-	  </div>
 
 
   </div>
