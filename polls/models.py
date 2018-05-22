@@ -33,7 +33,7 @@ class Good(models.Model):
     good_name = models.CharField(max_length=200)
     good_description = models.TextField()
     good_cost = models.FloatField()
-    good_img = models.ImageField()
+    good_img = models.ImageField(verbose_name="Photo", blank=True)
     good_img_link = models.CharField(max_length=255)
 
     def __str__(self):
