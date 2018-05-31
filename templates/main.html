@@ -8,6 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/goodsStyle.css">
 </head>
 <body>
 
@@ -15,11 +16,17 @@
 	  <div class="jumbotron text-center bgcolor">
 	    <img id="sizer" src="/static/logo.png">
 	  </div>
+    
+
+	  <div class="profile">
+	  	<span>HUI</span>
+	  </div>
+
 	  <div class="row">
 	  	<div class="col-lg-1"></div>
 	  	<div class="col-lg-10">
 		  	<nav class="navbar navbar-default center">
-			 
+
 			  	<div class="navbar-inner">
 				    <div class="navbar-header">
 				      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -30,21 +37,22 @@
 				    </div>
 				    <div class="collapse navbar-collapse" id="myNavbar">
 				      <ul class="nav navbar-nav ulcorrect">
-				        <li class="active"><a href="main.html">Главная</a></li>
-				        <li><a href="#">Товары</a></li>
+				        <li class="active"><a href="{% url 'index' %}">Главная</a></li>
+				        <li><a href="{% url 'goods' %}">Товары</a></li>
 				        <li><a href="#">Контакты</a></li>
 				        <li><a href="#">Новости</a></li>
-				        <li><a href="reg.html">Регистрация</a></li>
-				        <li><a href="auth.html">Логин</a></li>
+				        <li><a href={% url 'reg' %}>Регистрация</a></li>
+				        <li><a href="{% url 'auth' %}">Логин</a></li>
 				      </ul>
 				    </div>
 			    </div>
-		
-		    </nav> 
+
+		    </nav>
 	  	</div>
 	  	<div class="col-lg-1"></div>
 	  </div>
 
+        {% block content %}
 	  <div class="row btmpadding">
 	  	<div class="col-lg-1 text-center"></div>
 	  	<div class="col-lg-10">
@@ -79,6 +87,7 @@
 	  		</div>
 	  	<div class="col-lg-1 text-center"></div>
 	  </div>
+        {% endblock%}
 
 	 <div class="row txtwhite">
 	 	<div class="col-lg-1 text-center"></div>

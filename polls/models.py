@@ -3,6 +3,7 @@ from django.utils import timezone
 
 import datetime
 
+
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('Date published')
@@ -22,11 +23,13 @@ class Choice(models.Model):
     def __str__(self):
         return self.choice_text
 
+
 class Category(models.Model):
     category_name = models.CharField(max_length=255)
 
     def __str__(self):
         return self.category_name
+
 
 class Good(models.Model):
     category = models.ManyToManyField(Category)
@@ -39,6 +42,7 @@ class Good(models.Model):
     def __str__(self):
         return self.good_name
 
+
 class User(models.Model):
     user_name = models.CharField(max_length=200)
     user_password = models.CharField(max_length=255)
@@ -48,13 +52,15 @@ class User(models.Model):
     user_isAdmin = models.IntegerField(default=0)
     user_isBaned = models.IntegerField(default=0)
 
+    def __str__(self):
+        return self.user_name
+
 
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     order_name = models.CharField(max_length=255)
     order_date = models.DateField()
     order_cost = models.FloatField()
-
 
 
 class Component(models.Model):
