@@ -7,6 +7,8 @@ from .models import *
 
 
 def index(request):
+    if request.method == "POST":
+        request
     return render(request, 'main.html')
 
 

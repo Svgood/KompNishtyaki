@@ -11,6 +11,15 @@
   <link rel="stylesheet" href="/static/goodsStyle.css">
 </head>
 <body>
+     <div class="profile">
+	  	<form method="POST" action="{% url 'index' %}">
+	  		<span>Логин и пароль:</span>
+	  		<input class="profileField" type="text" name="login">
+	  		<input class="profileField" type="password" name="pas">
+	  		<input class="profileField" type="submit" name="subBtn" value="Логин">
+	  	</form>
+	  </div>
+
 
 	<div class="container">
 	  <div class="jumbotron text-center bgcolor">
@@ -18,9 +27,7 @@
 	  </div>
     
 
-	  <div class="profile">
-	  	<span>HUI</span>
-	  </div>
+
 
 	  <div class="row">
 	  	<div class="col-lg-1"></div>
@@ -42,7 +49,6 @@
 				        <li><a href="#">Контакты</a></li>
 				        <li><a href="#">Новости</a></li>
 				        <li><a href={% url 'reg' %}>Регистрация</a></li>
-				        <li><a href="{% url 'auth' %}">Логин</a></li>
 				      </ul>
 				    </div>
 			    </div>
