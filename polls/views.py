@@ -53,5 +53,6 @@ def good(request, good_id):
 def auth(request):
     return render(request, 'auth.html')
 
+
 def reg(request):
     return render(request, 'reg.html')
