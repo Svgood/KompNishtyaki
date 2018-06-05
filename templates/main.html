@@ -12,12 +12,25 @@
 </head>
 <body>
      <div class="profile">
-	  	<form method="POST" action="{% url 'index' %}">
-	  		<span>Логин и пароль:</span>
-	  		<input class="profileField" type="text" name="login">
-	  		<input class="profileField" type="password" name="pas">
-	  		<input class="profileField" type="submit" name="subBtn" value="Логин">
-	  	</form>
+         {% if not request.COOKIES.login %}
+            <form method="POST" action="{% url 'index' %}">
+                {% csrf_token %}
+                <span>Логин и пароль:</span>
+                <input class="profileField" type="text" name="login">
+                <input class="profileField" type="password" name="pas">
+                <input class="profileField" type="submit" name="log" value="Логин">
+            </form>
+         {% else %}
+             <div>
+                 <span>Hello {{ request.COOKIES.login }}</span>
+                 <img src="/static/logo.png" width="50px" height="50px">
+                 <span>{{ request.COOKIES.buy }}</span>
+                 <form method="POST" action="{% url 'index' %}">
+                    {% csrf_token %}
+                    <input class="profileField" type="submit" name="exit" value="Выход">
+                </form>
+            </div>
+         {% endif %}
 	  </div>
 
 

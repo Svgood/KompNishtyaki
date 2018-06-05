@@ -8,6 +8,11 @@
                     <span>{{good.good_name}}</span><br>
                     <span>{{good.good_description}}</span><br>
                     <span>Стоимость : {{good.good_cost}}</span><br>
+                       <form method="POST" action="{% url 'good' good.id %}">
+                        {% csrf_token %}
+                        <input class="profileField" type="submit" name="buy" value="Купить" style="width:150px; height: 30px">
+                        </form>
+
                </div>
             </div>
         <div class="col-lg-1"></div>

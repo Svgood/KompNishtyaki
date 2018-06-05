@@ -66,3 +66,8 @@ class Order(models.Model):
 class Component(models.Model):
     component_name = models.CharField(max_length=255)
     component_description = models.TextField()
+
+
+class StashItem(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    item = models.ForeignKey(Good, on_delete=models.CASCADE)
