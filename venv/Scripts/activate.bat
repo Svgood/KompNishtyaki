@@ -1,5 +1,5 @@
 @echo off
-set "VIRTUAL_ENV=D:\Programms\PycharmProjects\InternetMaga\venv"
+set "VIRTUAL_ENV=D:\Programms\PycharmProjects\GlebSite\venv"
 
 if not defined PROMPT (
     set "PROMPT=$P$G"

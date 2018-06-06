@@ -71,3 +71,6 @@ class Component(models.Model):
 class StashItem(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     item = models.ForeignKey(Good, on_delete=models.CASCADE)
+
+    def getUsername(self):
+        return self.user.user_name

@@ -1,4 +1,4 @@
-#!D:\Programms\PycharmProjects\InternetMaga\venv\Scripts\python.exe
+#!D:\Programms\PycharmProjects\GlebSite\venv\Scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'pip==9.0.3','console_scripts','pip'
 __requires__ = 'pip==9.0.3'
 import re

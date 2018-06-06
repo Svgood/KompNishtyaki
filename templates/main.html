@@ -22,8 +22,8 @@
             </form>
          {% else %}
              <div>
-                 <span>Hello {{ request.COOKIES.login }}</span>
-                 <img src="/static/logo.png" width="50px" height="50px">
+                 <span>{{ request.COOKIES.login }}</span>
+                 <a href="{%  url 'basket' %}"><img src="/static/basket.png" width="50px" height="50px"></a>
                  <span>{{ request.COOKIES.buy }}</span>
                  <form method="POST" action="{% url 'index' %}">
                     {% csrf_token %}

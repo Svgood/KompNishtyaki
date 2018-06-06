@@ -16,7 +16,8 @@ def index(request):
             if len(user) == 1:
                 response.set_cookie("login", log)
                 response.set_cookie("password", pas)
-                response.set_cookie("buy", 0)
+                stashItems = StashItem.objects.filter(user=user.get())
+                response.set_cookie("buy", len(stashItems))
         if "exit" in request.POST:
             response.delete_cookie("login")
             response.delete_cookie("password")
@@ -28,8 +29,6 @@ def index(request):
 def goods(request):
     goods_to_show = Good.objects.all()
     if request.method == "POST":
-        response = HttpResponseRedirect(reverse('goods'))
-
         cat = request.POST['choice']
         if cat != "Все": goods_to_show = Good.objects.filter(category__category_name=cat)
     cats = Category.objects.all()
@@ -44,11 +43,34 @@ def good(request, good_id):
     response = render(request, 'good.html', context)
 
     if request.method == "POST":
+        user = User.objects.filter(user_name=request.COOKIES.get("login")).get()
+        good = Good.objects.filter(id=int(good_id)).get()
         response = HttpResponseRedirect(reverse('index'))
-        response.set_cookie("buy", int(request.COOKIES.get('buy')) + 1)
+        newStash = StashItem(user=user, item=good)
+        newStash.save()
+        response.set_cookie("buy", len(StashItem.objects.filter(user=user)))
 
     return response
 
+
+def basket(request):
+    user = User.objects.filter(user_name=request.COOKIES.get("login")).get()
+    stashItems = StashItem.objects.filter(user=user)
+    goods = []
+    for item in stashItems:
+        goods.append(item.item)
+    context = {"goods" : goods}
+    return render(request, 'basket.html', context)
+
+def deleteFromBasket(request, good_id):
+    user = User.objects.filter(user_name=request.COOKIES.get("login")).get()
+    stash = StashItem.objects.filter(user=user, item_id=good_id)
+    for s in stash:
+        s.delete()
+        break
+    respons = HttpResponseRedirect(reverse('index'))
+    respons.set_cookie("buy",  len(StashItem.objects.filter(user=user)))
+    return respons
 
 def auth(request):
     return render(request, 'auth.html')

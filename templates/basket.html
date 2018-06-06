@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% block content %}
+    {% for good in goods%}
+    <div class="row btmpadding">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="goodField" style="width: 100%;">
+                <div class="goodFieldInside">
+                <a href="{% url 'good' good.id %}"><img class="goodImg" src="{{ good.good_img.url }}"></a>
+                <br>
+                <span class="goodName">{{ good.good_name }}</span>
+                <br>
+                <span class="goodDesc">{{ good.good_description }}</span>
+                    <form method="POST" action="{% url 'delete' good.id %}">
+                        {% csrf_token %}
+                        <input type="submit" name="delete" value="Удалить">
+                    </form>
+            </div>
+        </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    {%endfor%}
+{% endblock %}
